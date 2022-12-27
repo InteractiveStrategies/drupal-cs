@@ -205,11 +205,7 @@
     <type>warning</type>
   </rule>
 
-  <rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie.BraceOnNewLine">
-    <type>warning</type>
-  </rule>
-
-  <rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie.ContentAfterBrace">
+  <rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie">
     <type>warning</type>
   </rule>
 
@@ -268,6 +264,10 @@
 
   <rule ref="PEAR.Functions.FunctionCallSignature.SpaceBeforeCloseBracket">
     <severity>5</severity>
+    <type>warning</type>
+  </rule>
+
+  <rule ref="PSR2.Namespaces.NamespaceDeclaration.BlankLineAfter">
     <type>warning</type>
   </rule>
 
@@ -363,6 +363,22 @@
     <type>warning</type>
   </rule>
 
+  <rule ref="Squiz.Arrays.ArrayDeclaration.CloseBraceNewLine">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Arrays.ArrayDeclaration.CommaAfterLast">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Arrays.ArrayDeclaration.IndexNoNewline">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Arrays.ArrayDeclaration.NoSpaceAfterComma">
+    <type>warning</type>
+  </rule>
+
   <rule ref="Squiz.ControlStructures.ForLoopDeclaration">
     <type>warning</type>
   </rule>
@@ -400,6 +416,10 @@
   </rule>
 
   <rule ref="Squiz.WhiteSpace.FunctionSpacing">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.WhiteSpace.OperatorSpacing">
     <type>warning</type>
   </rule>
 
