@@ -15,6 +15,7 @@
     <exclude name="Drupal.WhiteSpace.CloseBracketSpacing.ClosingWhitespace"/>
     <exclude name="Drupal.WhiteSpace.OpenBracketSpacing.OpeningWhitespace"/>
     <exclude name="Drupal.WhiteSpace.ScopeClosingBrace.Line"/>
+    <exclude name="Squiz.WhiteSpace.SemicolonSpacing.Incorrect"/>
     <exclude name="PEAR.Functions.FunctionCallSignature.SpaceAfterCloseBracket"/>
     <exclude name="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore"/>
   </rule>
@@ -445,10 +446,6 @@
   </rule>
 
   <rule ref="Squiz.WhiteSpace.OperatorSpacing">
-    <type>warning</type>
-  </rule>
-
-  <rule ref="Squiz.WhiteSpace.SemicolonSpacing">
     <type>warning</type>
   </rule>
 
