@@ -33,6 +33,26 @@
     <type>warning</type>
   </rule>
 
+  <rule ref="Drupal.Classes.ClassDeclaration.BraceOnNewLine">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Classes.ClassDeclaration.CloseBraceAfterBody">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Classes.ClassDeclaration.CloseBraceSameLine">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Classes.ClassDeclaration.SpaceBeforeBrace">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Classes.FullyQualifiedNamespace">
+    <type>warning</type>
+  </rule>
+
   <rule ref="Drupal.Commenting.DocComment.LongFullStop">
     <type>warning</type>
   </rule>
@@ -77,7 +97,19 @@
     <type>warning</type>
   </rule>
 
+  <rule ref="Drupal.Commenting.DocComment.TagValueIndent">
+    <type>warning</type>
+  </rule>
+
   <rule ref="Drupal.Commenting.DocCommentAlignment.NoSpaceAfterStar">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.FileComment.Missing">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.FileComment.SpacingAfterComment">
     <type>warning</type>
   </rule>
 
@@ -94,6 +126,10 @@
   </rule>
 
   <rule ref="Drupal.Commenting.FunctionComment.ParamCommentIndentation">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.FunctionComment.ParamCommentNewLine">
     <type>warning</type>
   </rule>
 
@@ -207,7 +243,95 @@
     <type>warning</type>
   </rule>
 
+  <rule ref="PSR2.Namespaces.UseDeclaration.SpaceAfterLastUse">
+    <type>warning</type>
+  </rule>
+
   <rule ref="PSR12.ControlStructures.BooleanOperatorPlacement">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.Arrays.DisallowImplicitArrayCreation">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility">
+    <properties>
+      <property name="fixable" value="true" />
+    </properties>
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.Classes.UselessLateStaticBinding">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.ControlStructures.DisallowContinueWithoutIntegerOperandInSwitch"/>
+
+  <rule ref="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceEqualOperator">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceOperator">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.ControlStructures.RequireShortTernaryOperator">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.ControlStructures.UselessIfConditionWithReturn">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.ControlStructures.UselessTernaryOperator">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.Exceptions.RequireNonCapturingCatch">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInCall">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInDeclaration">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses">
+    <properties>
+      <property name="caseSensitive" value="true" />
+    </properties>
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.Namespaces.UselessAlias">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.PHP.OptimizedFunctionsWithoutUnpacking">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.TypeHints.NullTypeHintOnLastPosition">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHintSpacing">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing">
     <type>warning</type>
   </rule>
 
