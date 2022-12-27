@@ -8,12 +8,14 @@
     <exclude name="Drupal.InfoFiles.AutoAddedKeys"/>
     <exclude name="Drupal.Commenting.Deprecated.IncorrectTextLayout"/>
     <exclude name="Drupal.Commenting.Deprecated.DeprecatedMissingSeeTag"/>
+    <exclude name="Drupal.Commenting.FunctionComment.SeeAdditionalText"/>
     <exclude name="Drupal.Commenting.TodoComment.TodoFormat"/>
     <exclude name="Drupal.ControlStructures.ControlSignature.NewlineAfterCloseBrace"/>
     <exclude name="Drupal.ControlStructures.ControlSignature.NewlineAfterOpenBrace"/>
     <exclude name="Drupal.WhiteSpace.CloseBracketSpacing.ClosingWhitespace"/>
     <exclude name="Drupal.WhiteSpace.OpenBracketSpacing.OpeningWhitespace"/>
     <exclude name="Drupal.WhiteSpace.ScopeClosingBrace.Line"/>
+    <exclude name="PEAR.Functions.FunctionCallSignature.SpaceAfterCloseBracket"/>
     <exclude name="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore"/>
   </rule>
 
@@ -23,13 +25,6 @@
     <properties>
       <property name="lineLimit" value="120" />
     </properties>
-  </rule>
-
-  <rule ref="Drupal.Arrays.Array.ArrayIndentation">
-    <type>warning</type>
-  </rule>
-
-  <rule ref="Drupal.Arrays.Array.LongLineDeclaration">
     <type>warning</type>
   </rule>
 
@@ -58,6 +53,10 @@
   </rule>
 
   <rule ref="Drupal.Classes.PropertyDeclaration.Multiple">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Classes.UseGlobalClass.RedundantUseStatement">
     <type>warning</type>
   </rule>
 
@@ -102,6 +101,10 @@
   </rule>
 
   <rule ref="Drupal.Commenting.DocComment.SpacingBeforeShort">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.DocComment.SpacingBeforeTags">
     <type>warning</type>
   </rule>
 
@@ -394,6 +397,10 @@
   </rule>
 
   <rule ref="Squiz.ControlStructures.ForLoopDeclaration">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.ControlStructures.SwitchDeclaration.MissingCase">
     <type>warning</type>
   </rule>
 
