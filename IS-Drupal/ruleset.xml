@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="IS-Drupal">
+  <description>Customized Code Sniffer rules for Interactive Strategies Drupal projects.</description>
+
+  <arg name="extensions" value="inc,install,module,php,profile,test,theme,yml"/>
+
+  <rule ref="vendor/drupal/coder/coder_sniffer/Drupal">
+    <exclude name="Drupal.InfoFiles.AutoAddedKeys"/>
+    <exclude name="Drupal.Commenting.Deprecated.IncorrectTextLayout"/>
+    <exclude name="Drupal.Commenting.Deprecated.DeprecatedMissingSeeTag"/>
+    <exclude name="Drupal.Commenting.TodoComment.TodoFormat"/>
+    <exclude name="Drupal.ControlStructures.ControlSignature.NewlineAfterCloseBrace"/>
+    <exclude name="Drupal.ControlStructures.ControlSignature.NewlineAfterOpenBrace"/>
+    <exclude name="Drupal.WhiteSpace.CloseBracketSpacing.ClosingWhitespace"/>
+    <exclude name="Drupal.WhiteSpace.OpenBracketSpacing.OpeningWhitespace"/>
+    <exclude name="Drupal.WhiteSpace.ScopeClosingBrace.Line"/>
+    <exclude name="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore"/>
+  </rule>
+
+  <rule ref="vendor/drupal/coder/coder_sniffer/DrupalPractice"/>
+
+  <rule ref="Drupal.Arrays.Array">
+    <properties>
+      <property name="lineLimit" value="120" />
+    </properties>
+  </rule>
+
+  <rule ref="Drupal.Arrays.Array.LongLineDeclaration">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Arrays.DisallowLongArraySyntax">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.DocComment.LongFullStop">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.DocComment.LongNotCapital">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.DocComment.MissingShort">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.DocComment.ParamGroup">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.DocComment.ParamNotFirst">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.DocComment.ShortFullStop">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.DocComment.ShortNotCapital">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.DocComment.ShortSingleLine">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.DocComment.SpacingAfter">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.DocComment.SpacingBeforeShort">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.DocComment.TagGroupSpacing">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.DocCommentAlignment.NoSpaceAfterStar">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.FunctionComment.MissingParamComment">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.FunctionComment.MissingReturnComment">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.FunctionComment.ParamCommentFullStop">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.FunctionComment.ParamCommentIndentation">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.FunctionComment.ParamCommentNotCapital">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.InlineComment">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.ControlStructures.ControlSignature.SpaceAfterCloseParenthesis">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.ControlStructures.ControlSignature.SpaceAfterKeyword">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.NamingConventions.ValidFunctionName.InvalidPrefix">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Files.LineLength">
+    <properties>
+      <property name="lineLimit" value="120" />
+    </properties>
+  </rule>
+
+  <rule ref="Drupal.Formatting">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Strings.UnnecessaryStringConcat">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.WhiteSpace">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Generic.CodeAnalysis.ForLoopShouldBeWhileLoop"/>
+
+  <rule ref="Generic.CodeAnalysis.JumbledIncrementer"/>
+
+  <rule ref="Generic.CodeAnalysis.UnconditionalIfStatement"/>
+
+  <rule ref="Generic.Formatting.SpaceAfterCast.NoSpace">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie.BraceOnNewLine">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Generic.Metrics.NestingLevel">
+    <properties>
+      <property name="absoluteNestingLevel" value="99" />
+      <property name="nestingLevel" value="8" />
+    </properties>
+  </rule>
+
+  <rule ref="Generic.PHP.CharacterBeforePHPOpeningTag"/>
+
+  <rule ref="Generic.PHP.DiscourageGoto">
+    <type>error</type>
+  </rule>
+
+  <rule ref="Generic.PHP.ForbiddenFunctions">
+    <properties>
+      <property name="forbiddenFunctions" type="array">
+        <element key="eval" value="null"/>
+        <element key="extract" value="list"/>
+        <element key="mail" value="\Drupal::service('plugin.manager.mail')->mail"/>
+        <element key="ob_end_flush" value="ob_get_clean"/>
+        <element key="ob_flush" value="null"/>
+        <element key="ob_get_flush" value="ob_get_clean"/>
+        <element key="phpinfo" value="null"/>
+      </property>
+    </properties>
+  </rule>
+
+  <rule ref="Generic.PHP.NoSilencedErrors"/>
+
+  <rule ref="Generic.PHP.UpperCaseConstant">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Generic.WhiteSpace.DisallowTabIndent.TabsUsed">
+     <type>warning</type>
+  </rule>
+
+  <rule ref="PEAR.Functions.FunctionCallSignature">
+    <properties>
+      <property name="indent" value="2" />
+    </properties>
+  </rule>
+
+  <rule ref="PEAR.Functions.FunctionCallSignature.Indent">
+    <severity>5</severity>
+    <type>warning</type>
+  </rule>
+
+  <rule ref="PEAR.Functions.FunctionCallSignature.SpaceAfterOpenBracket">
+    <severity>5</severity>
+    <type>warning</type>
+  </rule>
+
+  <rule ref="PEAR.Functions.FunctionCallSignature.SpaceBeforeCloseBracket">
+    <severity>5</severity>
+    <type>warning</type>
+  </rule>
+
+  <rule ref="PSR12.ControlStructures.BooleanOperatorPlacement">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.ControlStructures.ForLoopDeclaration">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Functions.MultiLineFunctionDeclaration">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Operators.ValidLogicalOperators">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.PHP.DisallowSizeFunctionsInLoops">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.PHP.DiscouragedFunctions"/>
+
+  <rule ref="Squiz.PHP.InnerFunctions">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Scope.StaticThisUsage"/>
+
+  <rule ref="Squiz.Strings.ConcatenationSpacing">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Strings.DoubleQuoteUsage.NotRequired">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.WhiteSpace.FunctionSpacing">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.WhiteSpace.SemicolonSpacing">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
+    <type>warning</type>
+  </rule>
+</ruleset>

@@ -1,0 +1,26 @@
+{
+    "name": "interactivestrategies/drupal-cs",
+    "type": "phpcodesniffer-standard",
+    "description": "Custom Interactive Strategies code sniffer ruleset for Drupal projects.",
+    "keywords": [
+        "phpcs"
+    ],
+    "homepage": "https://bitbucket.org/interactivestrategies/drupal-cs",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Ben Voynick",
+            "email": "ben@interactivestrategies.com"
+        }
+    ],
+    "require": {
+        "drupal/coder": "^8.3.16"
+    },
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "sort-packages": true
+    }
+}
