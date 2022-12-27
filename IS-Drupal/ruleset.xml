@@ -57,6 +57,10 @@
     <type>warning</type>
   </rule>
 
+  <rule ref="Drupal.Classes.PropertyDeclaration.Multiple">
+    <type>warning</type>
+  </rule>
+
   <rule ref="Drupal.Commenting.ClassComment.Missing">
     <type>warning</type>
   </rule>
@@ -169,6 +173,12 @@
     <type>warning</type>
   </rule>
 
+  <rule ref="Drupal.NamingConventions.ValidFunctionName">
+    <properties>
+      <property name="strict" value="false"/>
+    </properties>
+  </rule>
+
   <rule ref="Drupal.NamingConventions.ValidFunctionName.InvalidPrefix">
     <type>warning</type>
   </rule>
@@ -202,6 +212,10 @@
   <rule ref="Generic.CodeAnalysis.UnconditionalIfStatement"/>
 
   <rule ref="Generic.Formatting.SpaceAfterCast.NoSpace">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Generic.Functions.FunctionCallArgumentSpacing.SpaceBeforeComma">
     <type>warning</type>
   </rule>
 
@@ -380,6 +394,10 @@
   </rule>
 
   <rule ref="Squiz.ControlStructures.ForLoopDeclaration">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.ControlStructures.SwitchDeclaration.SpacingAfterBreak">
     <type>warning</type>
   </rule>
 
