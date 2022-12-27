@@ -25,6 +25,10 @@
     </properties>
   </rule>
 
+  <rule ref="Drupal.Arrays.Array.ArrayIndentation">
+    <type>warning</type>
+  </rule>
+
   <rule ref="Drupal.Arrays.Array.LongLineDeclaration">
     <type>warning</type>
   </rule>
@@ -50,6 +54,10 @@
   </rule>
 
   <rule ref="Drupal.Classes.FullyQualifiedNamespace">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.ClassComment.Missing">
     <type>warning</type>
   </rule>
 
@@ -113,6 +121,10 @@
     <type>warning</type>
   </rule>
 
+  <rule ref="Drupal.Commenting.FunctionComment.Missing">
+    <type>warning</type>
+  </rule>
+
   <rule ref="Drupal.Commenting.FunctionComment.MissingParamComment">
     <type>warning</type>
   </rule>
@@ -141,6 +153,14 @@
     <type>warning</type>
   </rule>
 
+  <rule ref="Drupal.Commenting.PostStatementComment">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.VariableComment.Missing">
+    <type>warning</type>
+  </rule>
+
   <rule ref="Drupal.ControlStructures.ControlSignature.SpaceAfterCloseParenthesis">
     <type>warning</type>
   </rule>
@@ -150,6 +170,10 @@
   </rule>
 
   <rule ref="Drupal.NamingConventions.ValidFunctionName.InvalidPrefix">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Files.EndFileNewline">
     <type>warning</type>
   </rule>
 
@@ -182,6 +206,10 @@
   </rule>
 
   <rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie.BraceOnNewLine">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie.ContentAfterBrace">
     <type>warning</type>
   </rule>
 
