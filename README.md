@@ -19,7 +19,7 @@ Add a phpcs.xml.dist file in your project with content like this:
   <file>./dist/profiles/custom</file>
   <file>./dist/themes/custom</file>
 
-  <rule ref="../vendor/interactivestrategies/drupal-cs/IS-Drupal"/>
+  <rule ref="vendor/interactivestrategies/drupal-cs/IS-Drupal"/>
 </ruleset>
 ```
 
