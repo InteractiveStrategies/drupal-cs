@@ -18,6 +18,11 @@
         "slevomat/coding-standard": "^8.6",
         "squizlabs/php_codesniffer": "^3.7.1"
     },
+    "autoload": {
+        "psr-4": {
+            "ISDrupal\\": "ISDrupal"
+        }
+    },
     "prefer-stable": true,
     "config": {
         "allow-plugins": {

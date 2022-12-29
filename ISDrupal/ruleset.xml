@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ruleset name="IS-Drupal">
+<ruleset name="ISDrupal">
   <description>Customized Code Sniffer rules for Interactive Strategies Drupal projects.</description>
 
   <arg name="extensions" value="inc,install,module,php,profile,test,theme,yml"/>
 
   <exclude-pattern>*/vendor/*</exclude-pattern>
+
   <rule ref="vendor/drupal/coder/coder_sniffer/Drupal">
     <exclude name="Drupal.Commenting.Deprecated.IncorrectTextLayout"/>
     <exclude name="Drupal.Commenting.Deprecated.DeprecatedMissingSeeTag"/>
