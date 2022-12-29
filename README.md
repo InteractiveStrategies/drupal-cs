@@ -1,6 +1,6 @@
 # Interactive Strategies Drupal coding standards
 
-This package defines customized Code Sniffer rules for Drupal projects, based on [drupal/coder](https://www.drupal.org/project/coder).
+This package defines customized Code Sniffer rules for Drupal projects. It is primarily based on [drupal/coder](https://www.drupal.org/project/coder), with some sniffs excluded and others downgraded to warnings. Some additional sniffs not provided in drupal/coder have also been added.
 
 ## Installing the ruleset
 
@@ -19,7 +19,7 @@ Add a phpcs.xml.dist file in your project with content like this:
   <file>./dist/profiles/custom</file>
   <file>./dist/themes/custom</file>
 
-  <rule ref="vendor/interactivestrategies/drupal-cs/IS-Drupal"/>
+  <rule ref="ISDrupal"/>
 </ruleset>
 ```
 
