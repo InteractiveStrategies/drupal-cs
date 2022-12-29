@@ -18,12 +18,14 @@
     <exclude name="Drupal.WhiteSpace.CloseBracketSpacing.ClosingWhitespace"/>
     <exclude name="Drupal.WhiteSpace.OpenBracketSpacing.OpeningWhitespace"/>
     <exclude name="Drupal.WhiteSpace.ScopeClosingBrace.Line"/>
-    <exclude name="Squiz.WhiteSpace.SemicolonSpacing.Incorrect"/>
     <exclude name="PEAR.Functions.FunctionCallSignature.SpaceAfterCloseBracket"/>
+    <exclude name="Squiz.WhiteSpace.SemicolonSpacing.Incorrect"/>
     <exclude name="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore"/>
   </rule>
 
-  <rule ref="vendor/drupal/coder/coder_sniffer/DrupalPractice"/>
+  <rule ref="vendor/drupal/coder/coder_sniffer/DrupalPractice">
+    <exclude name="DrupalPractice.InfoFiles.NamespacedDependency.NonNamespaced"/>
+  </rule>
 
   <rule ref="Drupal.Arrays.Array">
     <properties>
