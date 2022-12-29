@@ -6,13 +6,14 @@
 
   <exclude-pattern>*/vendor/*</exclude-pattern>
   <rule ref="vendor/drupal/coder/coder_sniffer/Drupal">
-    <exclude name="Drupal.InfoFiles.AutoAddedKeys"/>
     <exclude name="Drupal.Commenting.Deprecated.IncorrectTextLayout"/>
     <exclude name="Drupal.Commenting.Deprecated.DeprecatedMissingSeeTag"/>
     <exclude name="Drupal.Commenting.FunctionComment.SeeAdditionalText"/>
     <exclude name="Drupal.Commenting.TodoComment.TodoFormat"/>
     <exclude name="Drupal.ControlStructures.ControlSignature.NewlineAfterCloseBrace"/>
     <exclude name="Drupal.ControlStructures.ControlSignature.NewlineAfterOpenBrace"/>
+    <exclude name="Drupal.InfoFiles.AutoAddedKeys"/>
+    <exclude name="Drupal.Semantics.FunctionTriggerError.TriggerErrorTextLayoutRelaxed"/>
     <exclude name="Drupal.WhiteSpace.CloseBracketSpacing.ClosingWhitespace"/>
     <exclude name="Drupal.WhiteSpace.OpenBracketSpacing.OpeningWhitespace"/>
     <exclude name="Drupal.WhiteSpace.ScopeClosingBrace.Line"/>
