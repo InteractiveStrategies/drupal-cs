@@ -89,6 +89,7 @@
 
   <rule ref="Drupal.Commenting.DocComment.ParamNotFirst">
     <type>warning</type>
+    <exclude-pattern>*/Commands/*</exclude-pattern>
   </rule>
 
   <rule ref="Drupal.Commenting.DocComment.ShortFullStop">
@@ -137,6 +138,7 @@
 
   <rule ref="Drupal.Commenting.FunctionComment.Missing">
     <type>warning</type>
+    <exclude-pattern>*/Commands/*</exclude-pattern>
   </rule>
 
   <rule ref="Drupal.Commenting.FunctionComment.MissingParamComment">
@@ -161,6 +163,10 @@
 
   <rule ref="Drupal.Commenting.FunctionComment.ParamCommentNotCapital">
     <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.Commenting.FunctionComment.ParamMissingDefinition">
+    <exclude-pattern>*/Commands/*</exclude-pattern>
   </rule>
 
   <rule ref="Drupal.Commenting.InlineComment">
