@@ -360,10 +360,6 @@
     <type>warning</type>
   </rule>
 
-  <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInCall">
-    <type>warning</type>
-  </rule>
-
   <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInDeclaration">
     <type>warning</type>
   </rule>
