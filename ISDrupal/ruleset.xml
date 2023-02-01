@@ -379,6 +379,10 @@
     <type>warning</type>
   </rule>
 
+  <rule ref="SlevomatCodingStandard.PHP.ShortList">
+    <type>warning</type>
+  </rule>
+
   <rule ref="SlevomatCodingStandard.TypeHints.NullTypeHintOnLastPosition">
     <type>warning</type>
   </rule>
