@@ -11,6 +11,8 @@
     <exclude name="Drupal.Commenting.Deprecated.DeprecatedMissingSeeTag"/>
     <exclude name="Drupal.Commenting.FunctionComment.SeeAdditionalText"/>
     <exclude name="Drupal.Commenting.InlineComment.InvalidEndChar"/>
+    <exclude name="Drupal.Commenting.InlineComment.NotCapital"/>
+    <exclude name="Drupal.Commenting.InlineComment.SpacingAfter"/>
     <exclude name="Drupal.Commenting.TodoComment.TodoFormat"/>
     <exclude name="Drupal.ControlStructures.ControlSignature.NewlineAfterCloseBrace"/>
     <exclude name="Drupal.ControlStructures.ControlSignature.NewlineAfterOpenBrace"/>
@@ -19,6 +21,7 @@
     <exclude name="Drupal.WhiteSpace.CloseBracketSpacing.ClosingWhitespace"/>
     <exclude name="Drupal.WhiteSpace.OpenBracketSpacing.OpeningWhitespace"/>
     <exclude name="Drupal.WhiteSpace.ScopeClosingBrace.Line"/>
+    <exclude name="DrupalPractice.Commenting.CommentEmptyLine"/>
     <exclude name="PEAR.Functions.FunctionCallSignature.SpaceAfterCloseBracket"/>
     <exclude name="Squiz.WhiteSpace.SemicolonSpacing.Incorrect"/>
     <exclude name="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore"/>
@@ -199,6 +202,14 @@
     <type>warning</type>
   </rule>
 
+  <rule ref="Drupal.NamingConventions.ValidFunctionName.NotCamelCaps">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Drupal.NamingConventions.ValidFunctionName.ScopeNotCamelCaps">
+    <type>warning</type>
+  </rule>
+
   <rule ref="Drupal.Files.EndFileNewline">
     <type>warning</type>
   </rule>
@@ -236,6 +247,10 @@
   </rule>
 
   <rule ref="Generic.Functions.FunctionCallArgumentSpacing.SpaceBeforeComma">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Generic.Functions.FunctionCallArgumentSpacing.TooMuchSpaceAfterComma">
     <type>warning</type>
   </rule>
 
