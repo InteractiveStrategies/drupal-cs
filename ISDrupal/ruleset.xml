@@ -6,7 +6,7 @@
 
   <exclude-pattern>*/vendor/*</exclude-pattern>
 
-  <rule ref="vendor/drupal/coder/coder_sniffer/Drupal">
+  <rule ref="Drupal">
     <exclude name="Drupal.Commenting.Deprecated.IncorrectTextLayout"/>
     <exclude name="Drupal.Commenting.Deprecated.DeprecatedMissingSeeTag"/>
     <exclude name="Drupal.Commenting.FunctionComment.SeeAdditionalText"/>
@@ -27,7 +27,7 @@
     <exclude name="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore"/>
   </rule>
 
-  <rule ref="vendor/drupal/coder/coder_sniffer/DrupalPractice">
+  <rule ref="DrupalPractice">
     <exclude name="DrupalPractice.InfoFiles.NamespacedDependency.NonNamespaced"/>
   </rule>
 
