@@ -176,6 +176,10 @@
     <exclude-pattern>*/Commands/*</exclude-pattern>
   </rule>
 
+  <rule ref="Drupal.Commenting.GenderNeutralComment">
+    <type>warning</type>
+  </rule>
+
   <rule ref="Drupal.Commenting.InlineComment">
     <type>warning</type>
   </rule>
