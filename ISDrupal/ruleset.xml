@@ -218,6 +218,10 @@
     <type>warning</type>
   </rule>
 
+  <rule ref="Drupal.NamingConventions.ValidVariableName">
+    <type>warning</type>
+  </rule>
+
   <rule ref="Drupal.Files.EndFileNewline">
     <type>warning</type>
   </rule>
