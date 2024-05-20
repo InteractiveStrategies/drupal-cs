@@ -467,6 +467,7 @@
   </rule>
 
   <rule ref="Squiz.Functions.MultiLineFunctionDeclaration">
+    <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
     <type>warning</type>
   </rule>
 
