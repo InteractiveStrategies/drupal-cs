@@ -240,6 +240,10 @@
     <type>error</type>
   </rule>
 
+  <rule ref="Drupal.Functions.MultiLineFunctionDeclaration">
+    <type>warning</type>
+  </rule>
+
   <rule ref="Drupal.Strings.UnnecessaryStringConcat">
     <type>warning</type>
   </rule>
@@ -463,11 +467,6 @@
   </rule>
 
   <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
-    <type>warning</type>
-  </rule>
-
-  <rule ref="Squiz.Functions.MultiLineFunctionDeclaration">
-    <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine"/>
     <type>warning</type>
   </rule>
 
