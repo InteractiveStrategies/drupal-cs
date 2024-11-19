@@ -396,9 +396,6 @@
   </rule>
 
   <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses">
-    <properties>
-      <property name="caseSensitive" value="true" />
-    </properties>
     <type>warning</type>
   </rule>
 
