@@ -135,11 +135,7 @@
     <type>warning</type>
   </rule>
 
-  <rule ref="Drupal.Commenting.FileComment.Missing">
-    <type>warning</type>
-  </rule>
-
-  <rule ref="Drupal.Commenting.FileComment.SpacingAfterComment">
+  <rule ref="Drupal.Commenting.FileComment">
     <type>warning</type>
   </rule>
 
@@ -192,6 +188,10 @@
     <type>warning</type>
   </rule>
 
+  <rule ref="Drupal.ControlStructures.ElseIf.ElseIfDeclaration">
+    <type>warning</type>
+  </rule>
+
   <rule ref="Drupal.ControlStructures.ControlSignature.SpaceAfterCloseParenthesis">
     <type>warning</type>
   </rule>
@@ -204,6 +204,10 @@
     <properties>
       <property name="strict" value="false"/>
     </properties>
+  </rule>
+
+  <rule ref="Drupal.NamingConventions.ValidFunctionName.InvalidName">
+    <type>warning</type>
   </rule>
 
   <rule ref="Drupal.NamingConventions.ValidFunctionName.InvalidPrefix">
@@ -420,6 +424,10 @@
   </rule>
 
   <rule ref="SlevomatCodingStandard.TypeHints.ReturnTypeHintSpacing">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Squiz.Arrays.ArrayBracketSpacing">
     <type>warning</type>
   </rule>
 
