@@ -337,7 +337,6 @@
         <element key="ob_end_flush" value="ob_get_clean"/>
         <element key="ob_flush" value="null"/>
         <element key="ob_get_flush" value="ob_get_clean"/>
-        <element key="phpinfo" value="null"/>
       </property>
     </properties>
   </rule>
@@ -350,6 +349,10 @@
 
   <rule ref="Generic.WhiteSpace.DisallowTabIndent.TabsUsed">
      <type>warning</type>
+  </rule>
+
+  <rule ref="ISDrupal.Functions.DebuggingFunctions">
+    <type>error</type>
   </rule>
 
   <rule ref="ISDrupal.Namespaces.CompilerFriendlyGlobalFunctions"/>
@@ -519,8 +522,6 @@
   <rule ref="Squiz.PHP.DisallowSizeFunctionsInLoops">
     <type>warning</type>
   </rule>
-
-  <rule ref="Squiz.PHP.DiscouragedFunctions"/>
 
   <rule ref="Squiz.PHP.InnerFunctions">
     <type>warning</type>
