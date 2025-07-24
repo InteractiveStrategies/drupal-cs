@@ -318,16 +318,25 @@
     <type>error</type>
   </rule>
 
+  <!--
+    Forbid a couple categories of functions:
+    1. Functions that are insecure.
+    2. Functions that make no sense in the context of Drupal.
+  -->
   <rule ref="Generic.PHP.ForbiddenFunctions">
     <properties>
       <property name="forbiddenFunctions" type="array">
+        <!-- eval() is insecure -->
         <element key="eval" value="null"/>
+        <!-- extract() is insecure and list()/array destructuring is always an alternative -->
         <element key="extract" value="list"/>
+        <!-- In Drupal specifically, the core mail manager should always be used for email -->
         <element key="mail" value="\Drupal::service('plugin.manager.mail')->mail"/>
+        <!-- In Symfony, where the response body is heavily managed and sent in a burst,
+             it never makes sense to flush the buffer directly -->
         <element key="ob_end_flush" value="ob_get_clean"/>
         <element key="ob_flush" value="null"/>
         <element key="ob_get_flush" value="ob_get_clean"/>
-        <element key="phpinfo" value="null"/>
       </property>
     </properties>
   </rule>
@@ -340,6 +349,10 @@
 
   <rule ref="Generic.WhiteSpace.DisallowTabIndent.TabsUsed">
      <type>warning</type>
+  </rule>
+
+  <rule ref="ISDrupal.Functions.DebuggingFunctions">
+    <type>error</type>
   </rule>
 
   <rule ref="ISDrupal.Namespaces.CompilerFriendlyGlobalFunctions"/>
@@ -509,8 +522,6 @@
   <rule ref="Squiz.PHP.DisallowSizeFunctionsInLoops">
     <type>warning</type>
   </rule>
-
-  <rule ref="Squiz.PHP.DiscouragedFunctions"/>
 
   <rule ref="Squiz.PHP.InnerFunctions">
     <type>warning</type>
