@@ -45,10 +45,6 @@
     <type>warning</type>
   </rule>
 
-  <rule ref="Drupal.Arrays.DisallowLongArraySyntax">
-    <type>warning</type>
-  </rule>
-
   <rule ref="Drupal.Classes.ClassDeclaration.BraceOnNewLine">
     <type>warning</type>
   </rule>
@@ -74,10 +70,6 @@
   </rule>
 
   <rule ref="Drupal.Classes.UseGlobalClass.RedundantUseStatement">
-    <type>warning</type>
-  </rule>
-
-  <rule ref="Drupal.Classes.UseLeadingBackslash">
     <type>warning</type>
   </rule>
 
@@ -211,10 +203,6 @@
     <type>warning</type>
   </rule>
 
-  <rule ref="Drupal.ControlStructures.ElseIf.ElseIfDeclaration">
-    <type>warning</type>
-  </rule>
-
   <rule ref="Drupal.ControlStructures.ControlSignature.SpaceAfterCloseParenthesis">
     <type>warning</type>
   </rule>
@@ -271,11 +259,11 @@
     <type>warning</type>
   </rule>
 
-  <rule ref="Drupal.Strings.UnnecessaryStringConcat">
+  <rule ref="Drupal.WhiteSpace">
     <type>warning</type>
   </rule>
 
-  <rule ref="Drupal.WhiteSpace">
+  <rule ref="Generic.Arrays.DisallowLongArraySyntax">
     <type>warning</type>
   </rule>
 
@@ -344,6 +332,10 @@
   <rule ref="Generic.PHP.NoSilencedErrors"/>
 
   <rule ref="Generic.PHP.UpperCaseConstant">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="Generic.Strings.UnnecessaryStringConcat">
     <type>warning</type>
   </rule>
 
@@ -440,6 +432,14 @@
   </rule>
 
   <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
+    <type>warning</type>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash">
     <type>warning</type>
   </rule>
 
