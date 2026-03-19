@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "drupal/coder": "^9@beta",
+        "drupal/coder": "^9",
         "slevomat/coding-standard": "^8.25.1",
         "squizlabs/php_codesniffer": "^4.0.1"
     },
