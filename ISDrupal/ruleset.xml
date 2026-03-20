@@ -296,6 +296,10 @@
     </properties>
   </rule>
 
+  <rule ref="Generic.NamingConventions.TraitNameSuffix">
+    <type>warning</type>
+  </rule>
+
   <rule ref="Generic.NamingConventions.UpperCaseConstantName.ClassConstantNotUpperCase">
     <type>warning</type>
   </rule>
