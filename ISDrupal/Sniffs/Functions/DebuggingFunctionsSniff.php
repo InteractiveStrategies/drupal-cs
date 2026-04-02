@@ -24,14 +24,40 @@ class DebuggingFunctionsSniff extends ForbiddenFunctionsSniff {
      * @var array<string, null>
      */
     public $forbiddenFunctions = [
+        // PHP debugging functions.
+        'debug_backtrace'   => null,
+        'error_log'         => null,
+        'phpinfo'           => null,
+        'print_r'           => null,
+        'var_dump'          => null,
+        'var_export'        => null,
+
+        // Symfony var dumper functions.
+        // 'dd' is omitted because it is already forbidden by Drupal.Functions.DiscouragedFunctions.Discouraged.
+        'dump'              => null,
+
         // Devel module debugging functions.
-        'debug_dacktrace' => null,
-        'dump'            => null,
-        'error_log'       => null,
-        'phpinfo'         => null,
-        'print_r'         => null,
-        'var_dump'        => null,
-        'var_export'      => null,
+        'dargs'             => null,
+        'ddebug_backtrace'  => null,
+        'ddm'               => null,
+        'devel_debug'       => null,
+        'devel_dump'        => null,
+        'devel_export'      => null,
+        'devel_message'     => null,
+        'devel_render'      => null,
+        'devel_set_message' => null,
+        'dfb'               => null,
+        'dpbt'              => null,
+        'dpm'               => null,
+        'dpq'               => null,
+        'dpr'               => null,
+        'dsm'               => null,
+        'dvm'               => null,
+        'dvr'               => null,
+
+        // Kint module default debugging functions.
+        'd'                 => null,
+        's'                 => null,
     ];
 
     /**
@@ -39,6 +65,6 @@ class DebuggingFunctionsSniff extends ForbiddenFunctionsSniff {
      *
      * @var boolean
      */
-    public $error = FALSE;
+    public $error = TRUE;
 
 }
