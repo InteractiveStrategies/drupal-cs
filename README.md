@@ -24,3 +24,11 @@ Add a phpcs.xml.dist file in your project with content like this:
 ```
 
 The <file> tag(s) define what paths the rules should be applied to/within.
+
+## Upgrading to 3.x
+
+The interactivestrategies/drupal-cs 3.x branch upgrades from drupal/coder 8.x to 9.x, and PHPCS 3.x to 4.x. Aside from adjustments required by the drupal/coder upgrade, no major changes were made in the ISDrupal ruleset itself.
+
+For projects with a simple PHPCS configuration that simply uses the ISDrupal ruleset, unmodified, you should not have to make any configuration changes.
+
+For projects with ruleset customizations, you may need to double check customized rules against changes in drupal/coder and this package.
