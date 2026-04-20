@@ -347,9 +347,7 @@
      <type>warning</type>
   </rule>
 
-  <rule ref="ISDrupal.Functions.DebuggingFunctions">
-    <type>error</type>
-  </rule>
+  <rule ref="ISDrupal.Functions.DebuggingFunctions"/>
 
   <rule ref="ISDrupal.Namespaces.CompilerFriendlyGlobalFunctions"/>
 
