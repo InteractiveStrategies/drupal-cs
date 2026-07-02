@@ -119,10 +119,13 @@ class DebuggingFunctionsSniff extends ForbiddenFunctionsSniff {
     /**
      * Determines whether a function call's "return" argument is a truthy literal.
      *
-     * Only clear literals are treated as truthy (TRUE or a non-zero integer),
-     * supplied either positionally as the second argument or as a named
-     * "return:" argument. Variables and expressions are deliberately not
-     * resolved, so anything we cannot statically confirm keeps the error.
+     * Only clear literals are treated as truthy (TRUE or a non-zero integer).
+     * The return argument may be passed positionally (the second argument) or
+     * as a named "return:" argument, and named arguments are not required to
+     * appear in declaration order, e.g. var_export(return: TRUE, value: $x).
+     * All top-level arguments are therefore inspected to find whichever one is
+     * actually bound to "return". Variables and expressions are deliberately
+     * not resolved, so anything we cannot statically confirm keeps the error.
      *
      * @param \PHP_CodeSniffer\Files\File $phpcsFile The file being scanned.
      * @param int                         $stackPtr  The position of the function name token.
@@ -138,11 +141,12 @@ class DebuggingFunctionsSniff extends ForbiddenFunctionsSniff {
         }
         $closeParen = $tokens[$openParen]['parenthesis_closer'];
 
-        // Find the top-level comma separating the first argument from the second,
-        // skipping over any nested parentheses, arrays or square brackets.
-        $commaPtr = NULL;
-        for ($i = ($openParen + 1); $i < $closeParen; $i++) {
+        $positionalIndex = -1;
+        $argStart         = ($openParen + 1);
+
+        for ($i = ($openParen + 1); $i <= $closeParen; $i++) {
             $code = $tokens[$i]['code'];
+
             if ($code === T_OPEN_PARENTHESIS) {
                 $i = $tokens[$i]['parenthesis_closer'];
                 continue;
@@ -153,36 +157,64 @@ class DebuggingFunctionsSniff extends ForbiddenFunctionsSniff {
                 $i = $tokens[$i]['bracket_closer'];
                 continue;
             }
-            if ($code === T_COMMA) {
-                $commaPtr = $i;
-                break;
+
+            if ($code !== T_COMMA && $i !== $closeParen) {
+                continue;
+            }
+
+            if ($this->isTruthyReturnArgument($phpcsFile, $argStart, $i, $positionalIndex) === TRUE) {
+                return TRUE;
+            }
+
+            $argStart = ($i + 1);
+        }
+
+        return FALSE;
+    }
+
+    /**
+     * Checks a single argument range and reports whether it is a truthy "return" value.
+     *
+     * Increments $positionalIndex for each positional (unnamed) argument seen,
+     * since named arguments don't occupy a position.
+     *
+     * @param \PHP_CodeSniffer\Files\File $phpcsFile        The file being scanned.
+     * @param int                         $argStart         The first token of the argument.
+     * @param int                         $argEnd           The token after the argument (comma or closing parenthesis).
+     * @param int                         $positionalIndex  The positional index of the previous positional argument, updated by reference.
+     *
+     * @return boolean
+     */
+    private function isTruthyReturnArgument(File $phpcsFile, int $argStart, int $argEnd, int &$positionalIndex) {
+        $tokens = $phpcsFile->getTokens();
+
+        $labelPtr = $phpcsFile->findNext(Tokens::EMPTY_TOKENS, $argStart, $argEnd, TRUE);
+        if ($labelPtr === FALSE) {
+            // Empty argument, e.g. a trailing comma.
+            return FALSE;
+        }
+
+        $valueStart = $labelPtr;
+        $afterLabel = $phpcsFile->findNext(Tokens::EMPTY_TOKENS, ($labelPtr + 1), $argEnd, TRUE);
+        if ($afterLabel !== FALSE && $tokens[$afterLabel]['code'] === T_COLON) {
+            $isReturn = (strtolower($tokens[$labelPtr]['content']) === 'return');
+            $valueStart = $phpcsFile->findNext(Tokens::EMPTY_TOKENS, ($afterLabel + 1), $argEnd, TRUE);
+            if ($isReturn === FALSE || $valueStart === FALSE) {
+                return FALSE;
             }
         }
-
-        if ($commaPtr === NULL) {
-            // Only one argument was passed: not return mode.
-            return FALSE;
-        }
-
-        // Locate the start of the second argument.
-        $valueStart = $phpcsFile->findNext(Tokens::EMPTY_TOKENS, ($commaPtr + 1), $closeParen, TRUE);
-        if ($valueStart === FALSE) {
-            return FALSE;
-        }
-
-        // Skip a named-argument label, e.g. "return:".
-        $afterLabel = $phpcsFile->findNext(Tokens::EMPTY_TOKENS, ($valueStart + 1), $closeParen, TRUE);
-        if ($afterLabel !== FALSE && $tokens[$afterLabel]['code'] === T_COLON) {
-            $valueStart = $phpcsFile->findNext(Tokens::EMPTY_TOKENS, ($afterLabel + 1), $closeParen, TRUE);
-            if ($valueStart === FALSE) {
+        else {
+            $positionalIndex++;
+            if ($positionalIndex !== 1) {
+                // Not the "return" parameter's position.
                 return FALSE;
             }
         }
 
-        // The argument must be a single literal token (followed by the closing
-        // parenthesis or a further argument), otherwise we leave it as an error.
-        $valueEnd = $phpcsFile->findNext(Tokens::EMPTY_TOKENS, ($valueStart + 1), ($closeParen + 1), TRUE);
-        if ($valueEnd !== FALSE && $valueEnd < $closeParen && $tokens[$valueEnd]['code'] !== T_COMMA) {
+        // The value must be a single literal token, otherwise we can't
+        // statically confirm truthiness and leave it as an error.
+        $valueEnd = $phpcsFile->findNext(Tokens::EMPTY_TOKENS, ($valueStart + 1), $argEnd, TRUE);
+        if ($valueEnd !== FALSE) {
             return FALSE;
         }
 
